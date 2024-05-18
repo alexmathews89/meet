@@ -1,3 +1,5 @@
+This app will use serverless functions. These functions will be used to authenticate users and gather event data. The meet app will be using AWS and Google OAuth.
+
 Show/Hide Event Details:
 As a user,
 I should be able to show/hide event details

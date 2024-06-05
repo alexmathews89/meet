@@ -37,6 +37,8 @@ describe("<CitySearch /> component", () => {
     expect(suggestionList).toHaveClass("suggestions");
   });
 
+  // Lesson Code:
+
   test("updates list of suggestions correctly when user types in city textbox", async () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
@@ -63,4 +65,22 @@ describe("<CitySearch /> component", () => {
       expect(suggestionListItems[i].textContent).toBe(suggestions[i]);
     }
   });
+
+  /** 
+  //Tutor's Code:
+  test("renders the suggestion text in the textbox upon clicking on the suggestion", async () => {
+    const user = userEvent.setup();
+    const allEvents = await getEvents();
+    const allLocations = extractLocations(allEvents);
+    CitySearchComponent.rerender(<CitySearch allLocations={allLocations} />);
+
+    const cityTextBox = CitySearchComponent.queryByRole("textbox");
+    await user.type(cityTextBox, "Berlin");
+
+    const BerlinGermanySuggestions =
+      CitySearchComponent.queryAllByRole("listitem")[0];
+
+    expect(cityTextBox).toHaveValue(BerlinGermanySuggestions.textContent);
+  });
+  */
 });

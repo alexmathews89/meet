@@ -66,8 +66,6 @@ describe("<CitySearch /> component", () => {
     }
   });
 
-  /** 
-  //Tutor's Code:
   test("renders the suggestion text in the textbox upon clicking on the suggestion", async () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
@@ -80,7 +78,8 @@ describe("<CitySearch /> component", () => {
     const BerlinGermanySuggestions =
       CitySearchComponent.queryAllByRole("listitem")[0];
 
+    await user.click(BerlinGermanySuggestions);
+
     expect(cityTextBox).toHaveValue(BerlinGermanySuggestions.textContent);
   });
-  */
 });

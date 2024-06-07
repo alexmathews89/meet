@@ -5,24 +5,22 @@ const CitySearch = ({ allLocations }) => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
-  //Tutor's code
-  const handleItemClicked = (event) => {
-    const value = event.target.textContent;
-    setQuery(value);
-    setShowSuggestions(false); // to hide the list
-  };
-  //Tutor's code ends here
-
   const handleInputChanged = (event) => {
     const value = event.target.value;
     const filteredLocations = allLocations
       ? allLocations.filter((location) => {
-          return location.toUpperCase().indexOf(value.toUppercase()) > -1;
+          return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
         })
       : [];
 
     setQuery(value);
     setSuggestions(filteredLocations);
+  };
+
+  const handleItemClicked = (event) => {
+    const value = event.target.textContent;
+    setQuery(value);
+    setShowSuggestions(false); // to hide the list
   };
 
   /** 

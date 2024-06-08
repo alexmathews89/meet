@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <CitySearch />
       <EventList />
+      <div id="number-of-events"></div>
     </div>
   );
 }

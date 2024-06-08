@@ -11,7 +11,7 @@ import userEvent from "@testing-library/user-event";
 describe("<Event /> component", () => {
   let allEvents;
   beforeAll(async () => {
-    let allEvents = await getEvents();
+    allEvents = await getEvents();
   });
 
   test("renders the event title", () => {

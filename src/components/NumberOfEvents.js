@@ -9,7 +9,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
     setCurrentNOE(value);
 
     let errorText;
-    if (isNaN(value) || value <= 0 || value > 32) {
+    if (isNaN(value) || value <= 0) {
       errorText = "Invalid number of events, number of events must be 1-32";
     } else {
       errorText = "";

@@ -45,7 +45,7 @@ defineFeature(feature, (test) => {
     let NumberOfEventsComponent;
     given("a number is specified", async () => {
       const NumberOfEventsComponent = render(
-        <NumberOfEvents setCurrentNOE={() => {}} />
+        <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
       );
       const user = userEvent.setup();
       const userInput = NumberOfEventsComponent.queryByRole("textbox");

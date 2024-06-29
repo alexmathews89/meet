@@ -12,21 +12,21 @@ describe("<NumberOfEvents /> component", () => {
 
   test("renders text input", () => {
     const NumberOfEventsComponent = render(
-      <NumberOfEvents setCurrentNOE={() => {}} />
+      <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
     );
     expect(NumberOfEventsComponent.queryByRole("textbox")).toBeInTheDocument();
   });
 
   test("By default, the value of the input field is 32", () => {
     const NumberOfEventsComponent = render(
-      <NumberOfEvents setCurrentNOE={() => {}} />
+      <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
     );
     expect(NumberOfEventsComponent.queryByRole("textbox")).toHaveValue("32");
   });
 
   test("updates the value of the textbox as the user types", async () => {
     const NumberOfEventsComponent = render(
-      <NumberOfEvents setCurrentNOE={() => {}} />
+      <NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}} />
     );
     const user = userEvent.setup();
     const userInput = NumberOfEventsComponent.queryByRole("textbox");
@@ -40,7 +40,9 @@ describe("<NumberOfEvents /> integration", () => {
     const AppComponent = render(<App />);
     const AppDOM = AppComponent.container.firstChild;
 
-    const NumberOfEventsComponent = render(<NumberOfEvents />);
+    const NumberOfEventsComponent = render(
+      <NumberOfEvents setErrorAlert={() => {}} />
+    );
     const NumberOfEventsDOM = AppDOM.querySelector("#number-of-events");
     const NumberOfEventsInput =
       within(NumberOfEventsDOM).queryByRole("textbox");

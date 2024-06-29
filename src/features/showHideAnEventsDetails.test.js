@@ -18,12 +18,18 @@ defineFeature(feature, (test) => {
     let AppComponent;
     let CitySearchComponent;
     given("user has searched a city", async () => {
-      CitySearchComponent = render(<CitySearch allLocations={[]} />);
+      CitySearchComponent = render(
+        <CitySearch allLocations={[]} setInfoAlert={() => {}} />
+      );
       const user = userEvent.setup();
       const allEvents = await getEvents();
       const allLocations = extractLocations(allEvents);
       CitySearchComponent.rerender(
-        <CitySearch allLocations={allLocations} setCurrentCity={() => {}} />
+        <CitySearch
+          allLocations={allLocations}
+          setCurrentCity={() => {}}
+          setInfoAlert={() => {}}
+        />
       );
 
       const cityTextBox = CitySearchComponent.queryByRole("textbox");

@@ -5,8 +5,8 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
 
   const handleInputChange = (event) => {
     const value = event.target.value;
-    setEventNumber(value);
-    setCurrentNOE(value);
+    //setEventNumber(value);
+    //setCurrentNOE(value);
 
     let errorText;
     if (isNaN(value) || value <= 0) {
@@ -14,6 +14,8 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
         "Invalid number of events, number of events must be at least 1";
     } else {
       errorText = "";
+      setEventNumber(value);
+      setCurrentNOE(value);
     }
     /**if (value <= 0) {
       errorText = "Invalid number of events, number of events must be 1-32";

@@ -1,7 +1,7 @@
 import CitySearch from "./components/CitySearch";
 import EventList from "./components/EventList";
 import NumberOfEvents from "./components/NumberOfEvents";
-import { InfoAlert, ErrorAlert } from "./components/Alert";
+import { InfoAlert, ErrorAlert, WarningAlert } from "./components/Alert";
 import { useEffect, useState } from "react";
 import { extractLocations, getEvents } from "./api";
 
@@ -15,8 +15,16 @@ function App() {
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+  const [warningAlert, setWarningAlert] = useState("");
 
   useEffect(() => {
+    let warningText;
+    if (navigator.onLine) {
+      warningText = "";
+    } else {
+      warningText = "You are currently offline";
+    }
+    setWarningAlert(warningText);
     fetchData();
   }, [currentCity, currentNOE]);
 

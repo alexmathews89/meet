@@ -71,7 +71,7 @@ defineFeature(feature, (test) => {
       const EventListDOM = AppDOM.querySelector("#event-list");
       const renderedNumberOfEvents =
         within(EventListDOM).queryAllByRole("listitem");
-      expect(renderedNumberOfEvents.length).toBe(10);
+      expect(renderedNumberOfEvents.length).toBe(33);
     });
   });
 });

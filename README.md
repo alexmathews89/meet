@@ -1,4 +1,4 @@
-This app will use serverless functions. These functions will be used to authenticate users and gather event data. The meet app will be using AWS and Google OAuth.
+This app will use serverless functions. These functions will be used to authenticate users and gather event data. This application was built using React. The meet app will be using AWS and Google OAuth. The meet application gathers event information from the Google calender and is live here: https://alexmathews89.github.io/meet/
 
 Show/Hide Event Details:
 As a user,
